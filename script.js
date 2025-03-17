@@ -1,52 +1,40 @@
-// Theme handling
-let theme = localStorage.getItem('theme') || 'light';
-setTheme(theme);
+console.log('Its working')
 
-const themeDots = document.getElementsByClassName('theme-dot');
-Array.from(themeDots).forEach(dot => {
-    dot.addEventListener('click', function() {
-        const mode = this.dataset.mode;
-        setTheme(mode);
-    });
-});
+let theme = localStorage.getItem('theme')
 
-function setTheme(mode) {
-    const themeStyle = document.getElementById('theme-style');
-    themeStyle.href = `${mode}.css`;
-    localStorage.setItem('theme', mode);
+if(theme == null){
+	setTheme('light')
+}else{
+	setTheme(theme)
 }
 
-// GitHub Projects Integration
-async function fetchGitHubProjects() {
-    try {
-        const username = 'diyaajain';
-        const response = await axios.get(`https://api.github.com/users/${username}/repos`);
-        const projects = response.data
-            .filter(repo => !repo.fork)
-            .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+let themeDots = document.getElementsByClassName('theme-dot')
 
-        const projectsGrid = document.getElementById('github-projects');
-        projectsGrid.innerHTML = projects
-            .map(project => `
-                <div class="project-card animate-fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">${project.name}</h3>
-                        <p class="project-description">${project.description || 'No description available'}</p>
-                        <div class="project-meta">
-                            <span>⭐ ${project.stargazers_count}</span>
-                            <span>🔄 ${new Date(project.updated_at).toLocaleDateString()}</span>
-                        </div>
-                        <a href="${project.html_url}" target="_blank" class="btn btn-primary">View Project</a>
-                    </div>
-                </div>
-            `)
-            .join('');
-    } catch (error) {
-        console.error('Error fetching GitHub projects:', error);
-        document.getElementById('github-projects').innerHTML = 
-            '<p>Error loading projects. Please try again later.</p>';
-    }
+
+for (var i=0; themeDots.length > i; i++){
+	themeDots[i].addEventListener('click', function(){
+		let mode = this.dataset.mode
+		console.log('Option clicked:', mode)
+		setTheme(mode)
+	})
 }
 
-// Load GitHub projects when the page loads
-document.addEventListener('DOMContentLoaded', fetchGitHubProjects);
+function setTheme(mode){
+	if(mode == 'light'){
+		document.getElementById('theme-style').href = 'default.css'
+	}
+
+	if(mode == 'blue'){
+		document.getElementById('theme-style').href = 'blue.css'
+	}
+
+	if(mode == 'green'){
+		document.getElementById('theme-style').href = 'green.css'
+	}
+
+	if(mode == 'purple'){
+		document.getElementById('theme-style').href = 'purple.css'
+	}
+
+	localStorage.setItem('theme', mode)
+}
