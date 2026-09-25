@@ -1,215 +1,323 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Diya Jain</title>
-
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="default.css">
-	<link id="theme-style" rel="stylesheet" type="text/css" href="">
-	<style>
-		.repo-stats {
-			margin: 10px 0;
-			font-size: 14px;
-		}
-		.repo-stats span {
-			margin-right: 15px;
-		}
-		.github-activity {
-			padding: 20px 0;
-			text-align: center;
-		}
-	</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diya Jain — Field Notes</title>
+<meta name="description" content="Diya Jain — Computer Science grad building projects in data science & analytics. Coffee-powered, duck-approved." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@600;700;800;900&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-	<section class="s1">
-		<div class="main-container">
-			<div class="greeting-wrapper">
-				<h1>Hello, I'm Diya Jain</h1>
-			</div>
+<canvas id="trail-canvas" aria-hidden="true"></canvas>
 
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-badge">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c0-4 3-7 7-7 3 0 5 1.5 6 3.5.6-.2 1.3-.2 2 .3.5.4.8 1 .7 1.7-.1.8-.8 1.3-1.6 1.2-.4 3-3 5.3-6.6 5.3H8a4 4 0 0 1-4-4Z"/><circle cx="8.6" cy="9.2" r=".6" fill="currentColor" stroke="none"/></svg>
+      </span>
+      Diya Jain
+    </a>
+    <nav class="nav">
+      <a href="#top" class="active">Overview</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-outline btn-sm" href="resume.pdf" download>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        Resume
+      </a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle day/night mode">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-			<div class="intro-wrapper">
-				<div class="nav-wrapper">
+<main id="top">
 
-					<!-- Link around dots-wrapper added after tutorial video -->
-					<a href="index.html">
-						<div class="dots-wrapper">
-							<div id="dot-1" class="browser-dot"></div>
-							<div id="dot-2" class="browser-dot"></div>
-							<div id="dot-3" class="browser-dot"></div>
-						</div>
-					</a>
-					
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="hero-hand">field notes, entry one —</p>
+      <h1 class="hero-name">Diya Jain<span class="accent-dot">.</span></h1>
+      <p class="hero-role">Computer Science grad · building in data science &amp; analytics</p>
+      <p class="hero-desc">Right now I'm heads-down building projects and growing my skills in data science and analytics. Off-screen I'm usually rereading a fantasy novel, topping off a cup of coffee, or losing an afternoon to a good dataset — this site is basically my journal for the quest so far.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See My Projects
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Say Hello</a>
+      </div>
+    </div>
 
-					<ul id="navigation">
-						<li><a href="index.html#contact">Contact</a></li>
+    <div class="journal-spread">
+      <span class="tape tape-1"></span>
+      <span class="tape tape-2"></span>
+      <svg class="duck-illustration" viewBox="0 0 340 240" role="img" aria-label="Illustration of a yellow rubber duck next to a steaming coffee mug and a stack of books">
+        <ellipse cx="170" cy="205" rx="150" ry="14" fill="#000" opacity="0.06"/>
+        <!-- book stack -->
+        <rect x="30" y="150" width="86" height="18" rx="3" fill="#3f5d3a"/>
+        <rect x="36" y="132" width="74" height="18" rx="3" fill="#a3423c"/>
+        <rect x="30" y="114" width="80" height="18" rx="3" fill="#3f7d8c"/>
+        <!-- coffee mug -->
+        <path d="M232 150c2 26 16 40 38 40s36-14 38-40" fill="none" stroke="#2f2413" stroke-width="4" stroke-linecap="round"/>
+        <rect x="228" y="118" width="84" height="34" rx="8" fill="#f3e6c4" stroke="#2f2413" stroke-width="4"/>
+        <path d="M312 126c14-2 20 6 20 14s-6 16-20 14" fill="none" stroke="#2f2413" stroke-width="4"/>
+        <path d="M244 108c-4-8 4-10 2-18M262 108c-4-8 4-10 2-18M280 108c-4-8 4-10 2-18" fill="none" stroke="#6b4226" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+        <!-- duck body -->
+        <ellipse cx="150" cy="170" rx="70" ry="46" fill="#f2b705" stroke="#2f2413" stroke-width="4"/>
+        <path d="M100 168c14 10 34 14 50 8" fill="none" stroke="#c98f02" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="185" cy="115" rx="34" ry="32" fill="#f2b705" stroke="#2f2413" stroke-width="4"/>
+        <path d="M212 116c16-4 30 2 32 10s-10 16-26 14Z" fill="#e8791b" stroke="#2f2413" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="194" cy="106" r="4.5" fill="#2f2413"/>
+        <ellipse cx="112" cy="210" rx="14" ry="6" fill="#e8791b" stroke="#2f2413" stroke-width="3"/>
+        <ellipse cx="148" cy="214" rx="14" ry="6" fill="#e8791b" stroke="#2f2413" stroke-width="3"/>
+      </svg>
+      <figure class="polaroid">
+        <img src="diya-photo.jpg" alt="Diya Jain" />
+        <figcaption>hi, it's me</figcaption>
+      </figure>
+    </div>
+  </section>
 
-					</ul>
-				</div>
+  <section class="stats wrap">
+    <div class="stat">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3f5d3a" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+      <span><span class="stat-num">2+</span> <span class="stat-label">projects shipped</span></span>
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3f5d3a" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
+      <span><span class="stat-num">9+</span> <span class="stat-label">languages &amp; tools</span></span>
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3f5d3a" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+      <span><span class="stat-num">2</span> <span class="stat-label">internships</span></span>
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="#f2b705" stroke="#2f2413" stroke-width="1"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8 5.8 21l1.2-6.9-5-4.9 6.9-1Z"/></svg>
+      <span><span class="stat-num">∞</span> <span class="stat-label">cups of coffee</span></span>
+    </div>
+  </section>
 
-				<div class="left-column">
-					<img id="profile_pic" src="images/IMG_1786.jpeg">
-					<h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
+  <section class="chapter wrap" id="projects">
+    <p class="chapter-eyebrow">chapter two —</p>
+    <h2 class="chapter-title">Quests completed</h2>
+    <div class="quest-grid">
+      <article class="quest-card">
+        <h3>SentimentScope</h3>
+        <p class="quest-desc">A real-time sentiment analysis web app built with Python, Flask, and React. It pulls in user-generated text, runs it through NLTK and spaCy, and classifies it as positive, negative, or neutral — with live charts and word clouds so results are easy to read.</p>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">NLTK</span><span class="tag">spaCy</span>
+        </div>
+        <div class="mini-dashboard">
+          <p class="mini-title">sentiment breakdown <span class="mini-tag">sample output</span></p>
+          <div class="mini-chart-row">
+            <div class="donut" style="--p1:54; --p2:31; --p3:15;">
+              <svg viewBox="0 0 42 42" class="donut-svg">
+                <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#d8c186" stroke-width="4"></circle>
+                <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#3f5d3a" stroke-width="4" stroke-dasharray="54 46" stroke-dashoffset="25"></circle>
+                <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#f2b705" stroke-width="4" stroke-dasharray="31 69" stroke-dashoffset="-29"></circle>
+                <circle r="15.9" cx="21" cy="21" fill="transparent" stroke="#a3423c" stroke-width="4" stroke-dasharray="15 85" stroke-dashoffset="-60"></circle>
+              </svg>
+            </div>
+            <ul class="legend">
+              <li><i style="background:#3f5d3a"></i>Positive <span>54%</span></li>
+              <li><i style="background:#f2b705"></i>Neutral <span>31%</span></li>
+              <li><i style="background:#a3423c"></i>Negative <span>15%</span></li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://github.com/diyaajain" class="btn btn-outline btn-sm" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
 
-					<div id="theme-options-wrapper">
-						<div data-mode="light" id="light-mode" class="theme-dot"></div>
-						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-						<div data-mode="green" id="green-mode" class="theme-dot"></div>
-						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
-					</div>
+      <article class="quest-card">
+        <h3>Stock Visualization &amp; Pattern Recognition</h3>
+        <p class="quest-desc">A Windows Forms app in C# and .NET that renders interactive candlestick charts with live filtering across tickers. Abstract classes and specialized recognizers automatically detect 14 different candlestick patterns to flag potential trends.</p>
+        <div class="tag-row">
+          <span class="tag">C#</span><span class="tag">.NET</span><span class="tag">Windows Forms</span>
+        </div>
+        <div class="mini-dashboard">
+          <p class="mini-title">candlestick preview <span class="mini-tag">sample output</span></p>
+          <svg viewBox="0 0 160 60" class="candles">
+            <line x1="12" y1="10" x2="12" y2="50" stroke="#8c795a" stroke-width="1.5"/><rect x="8" y="22" width="8" height="18" fill="#a3423c"/>
+            <line x1="32" y1="14" x2="32" y2="46" stroke="#8c795a" stroke-width="1.5"/><rect x="28" y="18" width="8" height="14" fill="#3f5d3a"/>
+            <line x1="52" y1="8" x2="52" y2="44" stroke="#8c795a" stroke-width="1.5"/><rect x="48" y="26" width="8" height="12" fill="#a3423c"/>
+            <line x1="72" y1="12" x2="72" y2="50" stroke="#8c795a" stroke-width="1.5"/><rect x="68" y="16" width="8" height="20" fill="#3f5d3a"/>
+            <line x1="92" y1="6" x2="92" y2="40" stroke="#8c795a" stroke-width="1.5"/><rect x="88" y="12" width="8" height="10" fill="#3f5d3a"/>
+            <line x1="112" y1="16" x2="112" y2="48" stroke="#8c795a" stroke-width="1.5"/><rect x="108" y="24" width="8" height="16" fill="#a3423c"/>
+            <line x1="132" y1="10" x2="132" y2="42" stroke="#8c795a" stroke-width="1.5"/><rect x="128" y="14" width="8" height="18" fill="#3f5d3a"/>
+            <line x1="152" y1="8" x2="152" y2="38" stroke="#8c795a" stroke-width="1.5"/><rect x="148" y="10" width="8" height="14" fill="#3f5d3a"/>
+          </svg>
+        </div>
+        <a href="https://github.com/diyaajain" class="btn btn-outline btn-sm" target="_blank" rel="noopener">View on GitHub</a>
+      </article>
+    </div>
+  </section>
 
-					<p id="settings-note">*Theme settings will be saved for<br>your next vist</p>
-				</div>
+  <section class="chapter wrap" id="skills">
+    <p class="chapter-eyebrow">chapter three —</p>
+    <h2 class="chapter-title">What's in my rucksack</h2>
+    <div class="rucksack">
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h4>languages</h4>
+          <div class="tag-row">
+            <span class="tag">C/C++</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span><span class="tag">Swift</span><span class="tag">HTML/CSS3</span><span class="tag">JavaScript</span><span class="tag">C#</span><span class="tag">.NET</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>tools</h4>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">PostgreSQL</span><span class="tag">Xcode</span><span class="tag">Agile</span><span class="tag">Jira</span><span class="tag">GitHub</span><span class="tag">IntelliJ</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>people skills</h4>
+          <div class="tag-row">
+            <span class="tag">Communication</span><span class="tag">Analytical Thinking</span><span class="tag">Creative Problem-Solving</span><span class="tag">Collaboration</span>
+          </div>
+        </div>
+      </div>
+      <p class="footnote">always learning something new 🦆</p>
+    </div>
+  </section>
 
-				<div class="right-column">
+  <section class="chapter wrap" id="journey">
+    <p class="chapter-eyebrow">chapter four —</p>
+    <h2 class="chapter-title">The path so far</h2>
+    <ol class="map-timeline">
+      <li class="waypoint">
+        <p class="waypoint-date">Feb '25 – Jun '26</p>
+        <span class="waypoint-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg>
+        </span>
+        <div class="waypoint-body">
+          <h3>Business Analyst Intern</h3>
+          <p class="waypoint-org">AmplifAI Solutions, Inc. · Dallas, TX</p>
+          <p class="waypoint-desc">Led analysis and implementation across 10+ SaaS client deployments, used SQL and Excel to QA 30+ workforce KPIs at 99%+ accuracy, and resolved 50+ high-priority data issues — cutting client escalations by 25%.</p>
+        </div>
+      </li>
+      <li class="waypoint">
+        <p class="waypoint-date">Dec '24</p>
+        <span class="waypoint-icon grad">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#2f2413" stroke-width="2"><path d="m22 10-10-5L2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+        </span>
+        <div class="waypoint-body">
+          <h3>Graduated — B.S. Computer Science</h3>
+          <p class="waypoint-org">University of South Florida · Minor in Mathematics · GPA 3.51/4.00</p>
+        </div>
+      </li>
+      <li class="waypoint">
+        <p class="waypoint-date">Jun '22 – Dec '24</p>
+        <span class="waypoint-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        </span>
+        <div class="waypoint-body">
+          <h3>Math Tutor, CRLA Certified</h3>
+          <p class="waypoint-org">University of South Florida · Tampa, FL</p>
+          <p class="waypoint-desc">Worked with a team of 30+ tutors to deliver tailored lesson plans for 4,000+ students, lifting comprehension and engagement through personalized instruction.</p>
+        </div>
+      </li>
+      <li class="waypoint">
+        <p class="waypoint-date">May – Aug '23</p>
+        <span class="waypoint-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg>
+        </span>
+        <div class="waypoint-body">
+          <h3>Information &amp; Digital Solutions Intern</h3>
+          <p class="waypoint-org">Eli Lilly and Company · Indianapolis, IN</p>
+          <p class="waypoint-desc">Automated data retrieval with a Python/Pandas pipeline, cutting manual work by 80%, and built a document-processing workflow in Azure that delivered $10K in monthly savings.</p>
+        </div>
+      </li>
+      <li class="waypoint">
+        <p class="waypoint-date">Sep '23 – Mar '24</p>
+        <span class="waypoint-icon">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </span>
+        <div class="waypoint-body">
+          <h3>Logistics Lead, Hackabull</h3>
+          <p class="waypoint-org">Society of Hispanic Professional Engineers · Tampa, FL</p>
+          <p class="waypoint-desc">Led logistics for large-scale events — venue setup, vendor relationships, and cross-functional planning — for a smooth experience for attendees.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
 
-					<div id="preview-shadow">
-						<div id="preview">
-							<div id="corner-tl" class="corner"></div>
-							<div id="corner-tr" class="corner"></div>
-							<h3>About me</h3>
-							<p>I am a Computer Science Major with a Minor in Mathematics at University of South Florida.</p>
-							<div id="corner-br" class="corner"></div>
-							<div id="corner-bl" class="corner"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="chapter wrap" id="leadership">
+    <p class="chapter-eyebrow">chapter five —</p>
+    <h2 class="chapter-title">Leadership &amp; teamwork</h2>
+    <div class="grid-3">
+      <article class="panel">
+        <h3>Logistics Lead, SHPE — Hackabull</h3>
+        <p class="quest-desc">Ran logistics for large-scale hackathon events for the Society of Hispanic Professional Engineers — coordinating venue setup, managing vendor relationships, and leading a cross-functional team to keep everything running smoothly for attendees.</p>
+        <div class="tag-row">
+          <span class="tag">Event Operations</span><span class="tag">Vendor Management</span><span class="tag">Team Leadership</span>
+        </div>
+      </article>
 
-	<section class="s2">
-		<div class="main-container">
+      <aside class="panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h3 style="margin-bottom:0;">On GitHub</h3>
+          <a href="https://github.com/diyaajain" class="link-arrow" target="_blank" rel="noopener">Visit →</a>
+        </div>
+        <ul class="repo-list">
+          <li>
+            <span class="repo-info"><a href="https://github.com/diyaajain/all-projects" target="_blank" rel="noopener">all-projects</a><small>Pinned repo</small></span>
+            <span class="repo-lang">CSS</span>
+          </li>
+          <li>
+            <span class="repo-info"><a href="https://github.com/diyaajain/InCollege-diya" target="_blank" rel="noopener">InCollege-diya</a><small>Pinned repo</small></span>
+            <span class="repo-lang">Python</span>
+          </li>
+          <li>
+            <span class="repo-info"><a href="https://github.com/diyaajain/small-business-enterprise-system" target="_blank" rel="noopener">small-business-enterprise-system</a><small>Pinned repo</small></span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
 
-			<div class="about-wrapper">
-				<div class="about-me">
-					<h4>More about me</h4>
+  <section class="chapter wrap" id="contact">
+    <p class="chapter-eyebrow">chapter six —</p>
+    <h2 class="chapter-title">Say hello</h2>
+    <div class="postcard">
+      <div>
+        <p class="quest-desc" style="margin-bottom:18px;">Building something interesting, or just want to talk data, ducks, or good fantasy books? My inbox is open.</p>
+        <div class="social-row">
+          <a href="https://www.linkedin.com/in/diyajain08/" class="social-btn" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.6H9.5V9h3.4v1.6h.05c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.3 4.2 5.4v6.2ZM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM7 20.4H3.6V9H7v11.4Z"/></svg></a>
+          <a href="https://github.com/diyaajain" class="social-btn" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.3.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg></a>
+          <a href="mailto:diyadeepi.jain@gmail.com" class="social-btn" aria-label="Email"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+        </div>
+        <p class="contact-line">diyadeepi.jain@gmail.com &nbsp;·&nbsp; (769) 634-3953</p>
+      </div>
+      <div class="postcard-stamp">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="#f2b705" stroke="#2f2413" stroke-width="1"><path d="M4 14c0-4 3-7 7-7 3 0 5 1.5 6 3.5.6-.2 1.3-.2 2 .3.5.4.8 1 .7 1.7-.1.8-.8 1.3-1.6 1.2-.4 3-3 5.3-6.6 5.3H8a4 4 0 0 1-4-4Z"/></svg>
+        thanks for reading this far
+      </div>
+    </div>
+  </section>
 
-					<p>I build new projects just to tickle my brain. </p>
-					
-					<hr>
+</main>
 
-					<h4>Resume</h4>
+<footer class="site-footer wrap">
+  <p>© <span id="year"></span> Diya Jain. All rights reserved.</p>
+  <p>Written by hand, fueled by coffee <span>☕</span> and one <span class="duck-emoji">🦆</span></p>
+</footer>
 
-					<p><a target="_blank" href="Resume.pdf">Download Resume</a></p>
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
-					<div id="skills">
-						<ul>
-							<li>Python</li>
-							<li>C</li>
-							<li>C++</li>
-							<li>Java</li>
-						</ul>
-
-					</div>
-
-				</div>
-
-				
-				<div class="social-links">
-					<img id="social_img" src="images/IMG_1106.jpeg">
-					<h3>Find me on LinkedIn and Github</h3>
-
-					<a target="_blank" href="https://www.linkedin.com/in/diyajain08/">LinkedIn: Diya Jain</a>
-					<br>
-					<a target="_blank" href="https://github.com/diyaajain">Github: Diyajain</a>
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-	<section class="s1">
-		<div class="main-container">
-			<h3 style="text-align: center;">Some of my past projects</h3>
-
-			<div class="post-wrapper">
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/calculator.jpeg">
-						<div class="post-preview">
-							<h6 class="post-title">Calculator App</h6>
-							<p class="post-intro">A simple yet powerful calculator application built with JavaScript, featuring basic arithmetic operations and a clean user interface.</p>
-							<a target="_blank" href="https://github.com/diyaajain/calculator">View on GitHub</a>
-							<a target="_blank" href="post1.html">Learn More</a>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/coming soon.jpeg">
-						<div class="post-preview">
-							<h6 class="post-title">Weather Dashboard</h6>
-							<p class="post-intro">An interactive weather dashboard that provides real-time weather updates and forecasts using OpenWeatherMap API. Features include city search and 5-day forecast.</p>
-							<a target="_blank" href="https://github.com/diyaajain/weather-dashboard">View on GitHub</a>
-							<a target="_blank" href="post2.html">Learn More</a>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/coming soon.jpeg">
-						<div class="post-preview">
-							<h6 class="post-title">Task Manager</h6>
-							<p class="post-intro">A full-stack task management application with user authentication, real-time updates, and data persistence using MongoDB. Built with Node.js and Express.</p>
-							<a target="_blank" href="https://github.com/diyaajain/task-manager">View on GitHub</a>
-							<a target="_blank" href="post3.html">Learn More</a>
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="post">
-						<img class="thumbnail" src="images/coming soon.jpeg">
-						<div class="post-preview">
-							<h6 class="post-title">Portfolio Website</h6>
-							<p class="post-intro">A responsive portfolio website showcasing my projects and skills. Built with HTML, CSS, and JavaScript, featuring theme customization and contact form.</p>
-							<a target="_blank" href="https://github.com/diyaajain/portfolio-website">View on GitHub</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			</div>
-		</div>
-	</section>
-
-	<section class="s2">
-		<div class="main-container">
-			<a href=""></a>
-			<h3 style="text-align: center;">Get In Touch</h3>
-
-			<form id="contact-form">
-				<a name="contact"></a>
-
-				<label>Name</label>
-				<input class="input-field" type="text" name="name">
-
-				<label>Subject</label>
-				<input class="input-field" type="text" name="subject">
-
-				<label>Email</label>
-				<input class="input-field" type="text" name="email">
-
-				<label>Message</label>
-				<textarea class="input-field" name="message"></textarea>
-
-				<input id="submit-btn" type="submit" value="Send">
-			</form>
-		</div>
-	</section> 
-
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="github.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
