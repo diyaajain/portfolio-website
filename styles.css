@@ -102,11 +102,12 @@ body::before{
 
 /* ---------- Hero ---------- */
 .hero{position:relative; z-index:1; display:grid; grid-template-columns:1.15fr 1fr 1.15fr; gap:32px; align-items:center; padding:68px 32px 40px;}
+.hero-heading{grid-column:1/-1;}
 .hero-hand{font-family:var(--font-hand); font-style:italic; font-size:1.4rem; color:var(--berry); margin:0 0 -4px; display:inline-block;}
 .hero-name{font-size:clamp(2.8rem,5.4vw,4rem); margin:6px 0 4px;}
 .accent-dot{color:var(--duck);}
 .hero-role{font-size:1.05rem; margin:10px 0 4px; color:var(--moss); font-weight:800;}
-.hero-desc{color:var(--ink-soft); max-width:48ch; margin:14px 0 30px; font-size:1.02rem;}
+.hero-desc{color:var(--ink-soft); max-width:48ch; margin:14px 0 30px;}
 .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
 
 /* Hero visual: circular soft cutout photo, flanked by the fun-facts card */
@@ -119,23 +120,18 @@ body::before{
 .hero-facts{width:100%; background:var(--parchment-deep); border:2px solid var(--ink); border-radius:14px; padding:22px 24px; box-shadow:5px 6px 0 var(--parchment-line);}
 .fact-box-title{font-family:var(--font-hand); font-style:italic; font-size:1.1rem; color:var(--ink-soft); margin:0 0 14px;}
 .fact-list{display:flex; flex-direction:column; gap:14px;}
-.fact-list li{display:flex; align-items:center; gap:10px; font-size:.92rem; font-weight:700; color:var(--ink);}
+.hero-desc,.fact-list li{font-family:var(--font-body); font-size:.95rem; font-weight:600; color:var(--ink-soft);}
+.fact-list li{display:flex; align-items:center; gap:10px;}
 .fact-icon{width:30px; height:30px; border-radius:8px; background:var(--parchment); border:1.5px solid var(--parchment-line); color:var(--moss); display:flex; align-items:center; justify-content:center; flex:none;}
 
 /* A small pixel-art duck waddling across the hero, just for fun */
-.pixel-duck{position:absolute; bottom:10px; left:-40px; z-index:-1; pointer-events:none; animation:waddle-walk 17s linear infinite;}
-@keyframes waddle-walk{
+.pixel-duck{position:fixed; top:14vh; left:-40px; z-index:5; pointer-events:none; animation:waddle-roam 24s linear infinite;}
+@keyframes waddle-roam{
   0%{transform:translate(0,0) rotate(-6deg);}
-  10%{transform:translate(11vw,0) rotate(6deg);}
-  20%{transform:translate(22vw,0) rotate(-6deg);}
-  30%{transform:translate(33vw,0) rotate(6deg);}
-  40%{transform:translate(44vw,0) rotate(-6deg);}
-  50%{transform:translate(55vw,0) rotate(6deg);}
-  60%{transform:translate(66vw,0) rotate(-6deg);}
-  70%{transform:translate(77vw,0) rotate(6deg);}
-  80%{transform:translate(88vw,0) rotate(-6deg);}
-  90%{transform:translate(99vw,0) rotate(6deg);}
-  100%{transform:translate(112vw,0) rotate(-6deg);}
+  25%{transform:translate(25vw,16vh) rotate(6deg);}
+  50%{transform:translate(58vw,-6vh) rotate(-6deg);}
+  75%{transform:translate(86vw,22vh) rotate(6deg);}
+  100%{transform:translate(112vw,4vh) rotate(-6deg);}
 }
 
 /* ---------- Stat strip: luggage tags ---------- */
@@ -165,12 +161,13 @@ body::before{
 .trail-point::before{content:''; position:absolute; left:-9px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--duck); border:2px solid var(--ink);}
 
 /* ---------- Projects (journal pages) ---------- */
-.quest-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
-.quest-card{position:relative; background:var(--parchment-deep); border:2px solid var(--ink); border-radius:14px; padding:26px 26px 24px; box-shadow:5px 6px 0 var(--parchment-line);}
+.quest-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; width:100%; align-items:stretch;}
+.quest-card{position:relative; display:flex; flex-direction:column; min-width:0; width:100%; background:var(--parchment-deep); border:2px solid var(--ink); border-radius:14px; padding:26px 26px 24px; box-shadow:5px 6px 0 var(--parchment-line);}
 .quest-card:nth-child(1){transform:rotate(-.8deg);}
 .quest-card:nth-child(2){transform:rotate(.8deg);}
 .quest-card h3{font-size:1.3rem; margin:0 0 10px;}
 .quest-desc{color:var(--ink-soft); font-size:.95rem; margin:0 0 16px; max-width:56ch;}
+.quest-card > .btn{align-self:flex-start; margin-top:auto;}
 .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;}
 .tag{font-family:var(--font-body); font-weight:800; font-size:.72rem; padding:5px 11px; border-radius:20px; background:var(--parchment); color:var(--ink-soft); border:1.5px solid var(--parchment-line);}
 
