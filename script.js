@@ -30,7 +30,7 @@ window.addEventListener('scroll', () => {
 });
 scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* Footprint cursor trail — little webbed duck tracks that waddle across the page */
+/* Ink-drop cursor trail — a faint trail of ink dots, like notes trailing off a pen */
 (function () {
   const canvas = document.getElementById('trail-canvas');
   const ctx = canvas.getContext('2d');
@@ -79,18 +79,8 @@ scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
     ctx.translate(p.x, p.y);
     ctx.rotate(p.angle);
     ctx.fillStyle = `rgba(107, 66, 38, ${p.alpha})`; /* coffee-brown ink */
-    // webbed-foot: one small "palm" ellipse + three toe dots
     ctx.beginPath();
-    ctx.ellipse(0, 0, 3.6, 5, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.ellipse(-3.2, -6, 1.6, 2.4, -0.3, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.ellipse(0, -7.5, 1.6, 2.6, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.ellipse(3.2, -6, 1.6, 2.4, 0.3, 0, Math.PI * 2);
+    ctx.ellipse(0, 0, 2.6, 4, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
   }
